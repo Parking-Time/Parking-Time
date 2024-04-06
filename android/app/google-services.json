@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "514558038790",
+    "project_id": "parking-time-34690",
+    "storage_bucket": "parking-time-34690.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514558038790:android:6f9f1b90a7035fa907c487",
+        "android_client_info": {
+          "package_name": "com.parkingtime.parking_time"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB5LoFm4w-R-9oE4TVajHxBI8WwvIFV5g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

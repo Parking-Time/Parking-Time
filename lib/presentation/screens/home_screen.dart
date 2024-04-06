@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:parking_time/common/route/router.dart';
 import 'package:parking_time/common/ui/app_colors.dart';
-import 'package:parking_time/common/ui/app_icons.dart';
 import 'package:parking_time/domain/entities/parking_lot/create_parking_lot_entity.dart';
 import 'package:parking_time/domain/entities/parking_lot/parking_lot_entity.dart';
 
@@ -49,8 +47,6 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(width: 14),
-                AppIcons.search(),
               ],
             )
           ),
