@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:parking_time/common/route/router.dart';
-import 'package:parking_time/common/ui/app_colors.dart';
 import 'package:parking_time/domain/entities/parking_lot/create_parking_lot_entity.dart';
 import 'package:parking_time/domain/entities/parking_lot/parking_lot_entity.dart';
-
-import '../../common/route/route.dart';
+import 'package:parking_time/presentation/widgets/flux_image.dart';
 import '../../domain/entities/parking_lot/edit_parking_lot_entity.dart';
+import '../../utils/package_utils.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -25,25 +23,29 @@ class HomeScreen extends StatelessWidget {
         appBar: PreferredSize(
           preferredSize: const Size(double.infinity, 200),
           child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 14),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             decoration: const BoxDecoration(
               color: Colors.white,
               border: Border(bottom: BorderSide(color: AppColors.gray3, width: 1))
             ),
-            child: Row(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
-                Text('주차시간', style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.blue, fontWeight: FontWeight.w800)),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: SizedBox(
-                    height: 50,
-                    child: TextField(
-                      style: Theme.of(context).textTheme.bodyMedium,
-                      cursorColor: Colors.blue,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        contentPadding: EdgeInsets.only(bottom: 3, left: 10, right: 10),
-                      ),
+                const Row(
+                  children: [
+                    FluxImage(imageUrl: 'assets/images/logo/blue_simbol.svg', height: 24, color: AppColors.white),
+                    SizedBox(width: 4),
+                    FluxImage(imageUrl: 'assets/images/logo/blue_logo_en.svg', height: 13, color: AppColors.white),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                SizedBox(
+                  child: TextField(
+                    style: Theme.of(context).textTheme.bodyMedium,
+                    cursorColor: Colors.blue,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      contentPadding: EdgeInsets.only(bottom: 3, left: 10, right: 10),
                     ),
                   ),
                 ),

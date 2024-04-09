@@ -14,6 +14,8 @@ dependencies:
   # UI
   cupertino_icons: ^1.0.6
   flutter_svg: ^2.0.7
+  lottie: ^3.1.0
+  extended_image: ^8.2.0
 
   # Route
   go_router: ^13.2.1
@@ -44,6 +46,7 @@ flutter:
     - pubspec.yaml
     - assets/icons/
     - assets/images/
+    - assets/images/logo/
 
   fonts:
     - family: Pretendard

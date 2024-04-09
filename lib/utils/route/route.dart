@@ -1,6 +1,7 @@
-import 'package:parking_time/common/route/route_name.dart';
 import 'package:parking_time/domain/entities/parking_lot/create_parking_lot_entity.dart';
 import 'package:parking_time/domain/entities/parking_lot/edit_parking_lot_entity.dart';
+
+import '../package_utils.dart';
 
 abstract class AppRoute {
   String get routingName;

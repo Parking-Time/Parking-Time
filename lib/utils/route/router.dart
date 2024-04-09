@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 import 'package:logger/logger.dart';
-import 'package:parking_time/common/route/route.dart';
-import 'package:parking_time/common/route/route_name.dart';
 import 'package:parking_time/presentation/screens/edit_parking_lot_screen.dart';
 import 'package:parking_time/presentation/screens/home_screen.dart';
+
+import '../package_utils.dart';
 
 class AppRouter {
   static void push<T extends AppRoute>(BuildContext context, T routeInfo) =>
