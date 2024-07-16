@@ -1,0 +1,1 @@
+typedef ExceptionTrace = ({Exception exception, StackTrace trace});
