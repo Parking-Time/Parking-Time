@@ -18,7 +18,7 @@ class AppBarSliverDelegate extends SliverPersistentHeaderDelegate {
       child: Row(
         children: [
           GestureDetector(
-            onTap: () => AppRouter.getRoute<AdminRoute>().push(AdminRouteArgs()),
+            onDoubleTap: () => AppRouter.getRoute<AdminRoute>().push(AdminRouteArgs()),
             child: Assets.images.logo.blueSimbolLogoEnHorizontal.svg(colorFilter: const ColorFilter.mode(kWhite, BlendMode.srcIn), width: 110, fit: BoxFit.fitWidth),
           ),
           const Spacer(),

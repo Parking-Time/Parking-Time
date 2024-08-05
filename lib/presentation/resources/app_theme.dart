@@ -8,6 +8,7 @@ class AppTheme {
     appBarTheme: const AppBarTheme(
       color: kWhite,
       surfaceTintColor: kTransparent,
+      elevation: 0,
     ),
     bottomAppBarTheme: const BottomAppBarTheme(
       color: kWhite,
@@ -38,6 +39,7 @@ class AppTheme {
       appBarTheme: const AppBarTheme(
         backgroundColor: kBlack,
         surfaceTintColor: kTransparent,
+        elevation: 0
       ),
       bottomAppBarTheme: const BottomAppBarTheme(
         color: kBlack,

@@ -8,6 +8,7 @@ import 'package:parking_time/presentation/router/routes/tab_routes/favorite_rout
 import 'package:parking_time/presentation/router/routes/tab_routes/home_route.dart';
 import 'package:parking_time/presentation/router/routes/tab_routes/profile_route.dart';
 
+import '../../main.dart';
 import '../../presentation/ui/main_tab/main_tab_screen.dart';
 import 'app_route_name.dart';
 
@@ -72,6 +73,14 @@ class AppRouter {
 
   static void changeTab({required BaseTab tab}) {
     _shell.goBranch(tab.index);
+  }
+
+  static void pop<T extends Object?>([T? result]) {
+    if (router.canPop()) {
+      router.pop(result);
+    } else {
+      logger.e('Currently, the pop() operation cannot be executed.');
+    }
   }
 
   static void clearGlobalRoute() {
