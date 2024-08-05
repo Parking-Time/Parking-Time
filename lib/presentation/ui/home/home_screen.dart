@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../config/theme/theme.dart';
+import '../../../presentation/resources/app_colors.dart';
+import '../../../presentation/resources/assets.gen.dart';
 import 'home_content.dart';
-import 'logo_sliver_delegate.dart';
+import 'app_bar_sliver_delegate.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -15,7 +16,7 @@ class HomeScreen extends StatelessWidget {
         body: CustomScrollView(
           slivers: [
             SliverPersistentHeader(
-              delegate: LogoSliverDelegate(),
+              delegate: AppBarSliverDelegate(),
             ),
             SliverAppBar(
               floating: true,
@@ -36,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                         decoration: const BoxDecoration(color: kWhite, borderRadius: BorderRadius.all(Radius.circular(40))),
                         child: Row(
                           children: [
-                            AppIcons.search(color: kGray2, size: 24),
+                            Assets.icons.bxSearch.svg(colorFilter: const ColorFilter.mode(kGray2, BlendMode.srcIn), height: 24, width: 24),
                             const SizedBox(width: 8),
                             Text(
                               '가고 싶은 곳을 검색해보세요',

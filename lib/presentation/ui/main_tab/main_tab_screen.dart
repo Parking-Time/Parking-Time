@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:parking_time/config/theme/theme.dart';
-import 'package:parking_time/config/router/app_router.dart';
+
+import '../../../presentation/resources/app_colors.dart';
+import '../../../presentation/resources/assets.gen.dart';
+import '../../../presentation/router/app_router.dart';
 
 class MainTabScreen extends StatefulWidget {
   const MainTabScreen({super.key, required this.navigationShell});
@@ -33,19 +35,19 @@ class _MainTabScreenState extends State<MainTabScreen> {
     items: [
       _buildBottomNavigationBarItem(
         label: '홈',
-        iconBuilder: (isSelected) => AppIcons.home(color: isSelected ? kBlue1 : kGray2),
+        iconBuilder: (isSelected) => Assets.icons.bxsHome.svg(colorFilter: ColorFilter.mode(isSelected ? kBlue1 : kGray2, BlendMode.srcIn)),
         isSelected: widget.navigationShell.currentIndex == 0,
         context: context,
       ),
       _buildBottomNavigationBarItem(
         label: '관심목록',
-        iconBuilder: (isSelected) => AppIcons.favorite(color: isSelected ? kBlue1 : kGray2),
+        iconBuilder: (isSelected) => Assets.icons.bxsHeart.svg(colorFilter: ColorFilter.mode(isSelected ? kBlue1 : kGray2, BlendMode.srcIn)),
         isSelected: widget.navigationShell.currentIndex == 1,
         context: context,
       ),
       _buildBottomNavigationBarItem(
         label: '프로필',
-        iconBuilder: (isSelected) => AppIcons.user(color: isSelected ? kBlue1 : kGray2),
+        iconBuilder: (isSelected) => Assets.icons.bxsUser.svg(colorFilter: ColorFilter.mode(isSelected ? kBlue1 : kGray2, BlendMode.srcIn)),
         isSelected: widget.navigationShell.currentIndex == 2,
         context: context,
       ),

@@ -1,1 +1,0 @@
-const blueSimbolLogoEnVertical = 'assets/images/logo/blue_simbol_logo_en_vertical.svg';

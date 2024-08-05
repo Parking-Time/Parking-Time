@@ -27,19 +27,26 @@ dependencies:
   json_annotation: ^4.8.1
   equatable: ^2.0.5
   logger: ^2.2.0
+  intl: ^0.19.0
+  either_dart: ^1.0.0
+  flutter_gen: ^5.6.0
+  envied: ^0.5.4+1
 
   # Firebase
   firebase_core: ^2.32.0
   cloud_firestore: ^4.4.4
-  geoflutterfire2: ^2.3.15
 
   # Permission
   permission_handler: ^11.1.0
 
-  # Functions
+  # Map
+  google_maps_flutter: ^2.7.0
   geolocator: ^12.0.0
-  either_dart: ^1.0.0
+  geocoding: ^3.0.0
 
+  # API
+  retrofit: ^4.1.0
+  dio: ^5.5.0+1
 
 dev_dependencies:
   flutter_test:
@@ -48,7 +55,16 @@ dev_dependencies:
   flutter_lints: ^3.0.0
   json_serializable: ^6.7.1
   build_runner: ^2.4.6
+  flutter_gen_runner: ^5.6.0
+  retrofit_generator: ^8.1.2
+  envied_generator: ^0.5.4+1
 
+flutter_gen:
+  output: lib/presentation/resources/
+  line_length: 120
+  integrations:
+    flutter_svg: true
+    lottie: true
 
 flutter:
   uses-material-design: true
@@ -62,29 +78,29 @@ flutter:
   fonts:
     - family: Pretendard
       fonts:
-        - asset: assets/fonts/Pretendard-Black.ttf
+        - asset: fonts/Pretendard-Black.ttf
           weight: 900
-        - asset: assets/fonts/Pretendard-ExtraBold.ttf
+        - asset: fonts/Pretendard-ExtraBold.ttf
           weight: 800
-        - asset: assets/fonts/Pretendard-Bold.ttf
+        - asset: fonts/Pretendard-Bold.ttf
           weight: 700
-        - asset: assets/fonts/Pretendard-SemiBold.ttf
+        - asset: fonts/Pretendard-SemiBold.ttf
           weight: 600
-        - asset: assets/fonts/Pretendard-Medium.ttf
+        - asset: fonts/Pretendard-Medium.ttf
           weight: 500
-        - asset: assets/fonts/Pretendard-Regular.ttf
+        - asset: fonts/Pretendard-Regular.ttf
           weight: 400
-        - asset: assets/fonts/Pretendard-Light.ttf
+        - asset: fonts/Pretendard-Light.ttf
           weight: 300
-        - asset: assets/fonts/Pretendard-ExtraLight.ttf
+        - asset: fonts/Pretendard-ExtraLight.ttf
           weight: 200
-        - asset: assets/fonts/Pretendard-Thin.ttf
+        - asset: fonts/Pretendard-Thin.ttf
           weight: 100
     - family: LINESeed
       fonts:
-        - asset: assets/fonts/LINESeedKR-Bd.otf
+        - asset: fonts/LINESeedKR-Bd.otf
           weight: 600
-        - asset: assets/fonts/LINESeedKR-Rg.otf
+        - asset: fonts/LINESeedKR-Rg.otf
           weight: 400
-        - asset: assets/fonts/LINESeedKR-Th.otf
+        - asset: fonts/LINESeedKR-Th.otf
           weight: 200

@@ -13,18 +13,18 @@ class UpdateParkingLotEntity extends BaseParkingLotEntity {
 
   final List<String> reservedPlaces;
 
-  final List<int> types;
-
   const UpdateParkingLotEntity({
     required this.id,
     required super.name,
+    super.openTime,
+    super.closeTime,
     required super.address,
     required super.location,
     required super.acceptableQuantity,
     required super.amountDayWeeks,
     required super.images,
+    required super.types,
     required this.reservedPlaces,
-    required this.types,
     required this.uploadImages,
     required this.deleteImages,
   });
@@ -32,6 +32,8 @@ class UpdateParkingLotEntity extends BaseParkingLotEntity {
   factory UpdateParkingLotEntity.fromParkingLotEntity(ParkingLotEntity entity) => UpdateParkingLotEntity(
     id: entity.id,
     name: entity.name,
+    openTime: entity.openTime,
+    closeTime: entity.closeTime,
     address: entity.address,
     location: entity.location,
     acceptableQuantity: entity.acceptableQuantity,

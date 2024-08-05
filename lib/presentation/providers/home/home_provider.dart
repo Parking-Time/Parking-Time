@@ -1,33 +1,25 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:geoflutterfire2/geoflutterfire2.dart';
-import 'package:parking_time/common/sortings/distance.dart';
-import 'package:parking_time/data/repository_impls/parking_lot_firebase_repository_impl.dart';
-import 'package:parking_time/domain/use_cases/location_use_case.dart';
-import 'package:parking_time/domain/use_cases/parking_lot_use_case.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-import '../../../common/typedef/page.dart';
-import '../../../domain/entities/parking_lot/parking_lot_light_entity.dart';
+import '../../../domain/entities/parking_lot/light_parking_lot_entity.dart';
+import '../../../domain/use_cases/location_use_case.dart';
+import '../../../domain/use_cases/parking_lot_use_case.dart';
 import '../../../domain/use_cases/permission_use_case.dart';
+import '../../../utils/sortings/distance.dart';
 
 final homeProvider = StateNotifierProvider<HomeStateNotifier, HomeState>((ref) => HomeStateNotifier(
-  parkingLotUseCase: ParkingLotUseCase(
-    repository: ParkingLotFirebaseRepositoryImpl(
-      firestore: FirebaseFirestore.instance,
-      geoFirestore: GeoFlutterFire(),
-    ),
-  ),
-  permissionUseCase: PermissionUseCase(),
-  locationUseCase: LocationUseCase(),
+  parkingLotUseCase: ref.read(parkingLotUseCase),
+  permissionUseCase: ref.read(permissionUseCase),
+  locationUseCase: ref.read(locationUseCase),
 ));
 
-
-class HomeState {
-  AsyncValue<Page<ParkingLotLightEntity>> nearbyParkingLotList = const AsyncValue.loading();
-}
-
 class HomeStateNotifier extends StateNotifier<HomeState> {
+  final ParkingLotUseCase _parkingLotUseCase;
+
+  final PermissionUseCase _permissionUseCase;
+
+  final LocationUseCase _locationUseCase;
+
   HomeStateNotifier({
     required ParkingLotUseCase parkingLotUseCase,
     required PermissionUseCase permissionUseCase,
@@ -38,27 +30,32 @@ class HomeStateNotifier extends StateNotifier<HomeState> {
         super(HomeState()) {
     loadNearbyParkingLot();
   }
-
-  final ParkingLotUseCase _parkingLotUseCase;
-
-  final PermissionUseCase _permissionUseCase;
-
-  final LocationUseCase _locationUseCase;
-
-  void requestLocationPermission() {
-    _permissionUseCase.requestPermission(Permission.location);
-  }
   
   void loadNearbyParkingLot() async {
-    if (!await _permissionUseCase.requestPermission(Permission.location).isGranted) return;
+    if (!(await _permissionUseCase.requestPermission(Permission.locationWhenInUse)).isGranted) return;
 
-    final center = await _locationUseCase.getCurrentLocation();
+    //const center = LatLng(37.5250243, 126.9258867);
+    final center = await _locationUseCase.getFastUserCurrentLocation();
 
-    final result = await _parkingLotUseCase.getParkingLots(sorting: Distance(center: GeoFirePoint(center.latitude, center.longitude), radius: 2000));
+    final result = await _parkingLotUseCase.getParkingLots(sorting: Distance(), center: center, radius: 10000);
 
-    if (result.isLeft) {
-      state.nearbyParkingLotList = AsyncValue.error(result.left.exception, result.left.trace);
-    }
+    state = state.copyWith(
+      nearbyParkingLotList: result.isLeft
+          ? AsyncValue.error(result.left.exception, result.left.trace)
+          : AsyncValue.data(result.right.data),
+    );
+
   }
-  
+}
+
+class HomeState {
+  final AsyncValue<List<LightParkingLotEntity>> nearbyParkingLotList;
+
+  HomeState({this.nearbyParkingLotList = const AsyncValue.loading()});
+
+  HomeState copyWith({AsyncValue<List<LightParkingLotEntity>>? nearbyParkingLotList}) {
+    return HomeState(
+      nearbyParkingLotList: nearbyParkingLotList ?? this.nearbyParkingLotList,
+    );
+  }
 }

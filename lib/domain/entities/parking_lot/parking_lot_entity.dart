@@ -9,11 +9,11 @@ class ParkingLotEntity extends BaseParkingLotEntity {
 
   final List<String> reservedPlaces;
 
-  final List<int> types;
-
   const ParkingLotEntity({
     required this.id,
     required super.name,
+    super.openTime,
+    super.closeTime,
     required super.address,
     required super.location,
     required super.acceptableQuantity,
@@ -21,7 +21,7 @@ class ParkingLotEntity extends BaseParkingLotEntity {
     super.images = const [''],
     required this.viewCount,
     this.reservedPlaces = const [],
-    this.types = const [],
+    super.types = const [],
   });
 
 }
