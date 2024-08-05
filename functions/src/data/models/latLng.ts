@@ -12,14 +12,14 @@ export class LatLng implements ILatLng {
         this.longitude = parameters.longitude;
     }
 
-    static fromJson(json: Array<number>): LatLng {
+    static fromJson(json: {[key: string]: any}): LatLng {
         return new LatLng({
-            latitude: json[0],
-            longitude: json[1],
+            latitude: json['latitude'],
+            longitude: json['longitude'],
         });
     }
 
-    toJson(): Array<number> {
-        return [this.latitude, this.longitude];
+    toJson(): {[key: string]: any} {
+        return {latitude: this.latitude, longitude: this.longitude};
     }
 }

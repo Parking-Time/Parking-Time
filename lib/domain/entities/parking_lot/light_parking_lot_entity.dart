@@ -9,7 +9,7 @@ import '../../../data/models/location_model.dart';
 
 class LightParkingLotEntity {
 
-  final String id;
+  final int id;
 
   final String name;
 

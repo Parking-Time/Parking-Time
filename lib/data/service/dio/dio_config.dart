@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:parking_time/env.dart';
+import 'package:parking_time/utils/env/env.dart';
 
 class DioConfig {
   static Dio instance = Dio(

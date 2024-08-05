@@ -53,26 +53,30 @@ export class ParkingLotService {
                 const area = this.locationUseCase.getExpandLatLngBoundsWithMeters(center!, distance!);
                 const result = await this.parkingLotUseCase.getLightParkingLotsFromArea(sorting!, page!, pageSize, center!, area);
 
-                response.status(200).json(new ResponseBody({
-                    status: 200,
-                    body: result.map((value) => value.toJson()),
-                    meta: new Meta({
-                        page: page!,
-                        pageSize: pageSize!,
-                        count: result.length,
-                    }),
-                }));
+                response.status(200).json(
+                    new ResponseBody({
+                        status: 200,
+                        body: result.map((value) => value.toJson()),
+                        meta: new Meta({
+                            page: page!,
+                            pageSize: pageSize!,
+                            count: result.length,
+                        }),
+                    }).toJson()
+                );
             } else {
                 const result = await this.parkingLotUseCase.getLightParkingLotsFromKeyword(sorting!, page!, pageSize, center!, keyword!);
-                response.status(200).json(new ResponseBody({
-                    status: 200,
-                    body: result.map((value) => value.toJson()),
-                    meta: new Meta({
-                        page: page!,
-                        pageSize: pageSize!,
-                        count: result.length,
-                    }),
-                }));
+                response.status(200).json(
+                    new ResponseBody({
+                        status: 200,
+                        body: result.map((value) => value.toJson()),
+                        meta: new Meta({
+                            page: page!,
+                            pageSize: pageSize!,
+                            count: result.length,
+                        }),
+                    }).toJson()
+                );
             }
         } catch (error) {
             if (error instanceof Error) {

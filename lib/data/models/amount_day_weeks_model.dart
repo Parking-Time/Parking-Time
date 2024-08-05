@@ -18,7 +18,7 @@ class AmountDayWeeksModel {
 
   final AmountDayModel sun;
 
-  final String parkingLot;
+  final int parkingLot;
 
   AmountDayWeeksModel({
     required this.mon,

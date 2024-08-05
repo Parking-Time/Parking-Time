@@ -6,7 +6,7 @@ part 'api_response_model.g.dart';
 class ApiResponseModel<T> {
   final int status;
 
-  final String errorMessage;
+  final String? errorMessage;
 
   final T? body;
 
@@ -19,9 +19,9 @@ class ApiResponseModel<T> {
 
   ApiResponseModel({
     required this.status,
-    required this.errorMessage,
-    required this.body,
-    required this.meta,
+    this.errorMessage,
+    this.body,
+    this.meta,
   });
 
 }

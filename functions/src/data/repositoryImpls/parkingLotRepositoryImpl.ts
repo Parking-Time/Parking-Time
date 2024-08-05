@@ -20,22 +20,24 @@ export class ParkingLotRepositoryImpl implements ParkingLotRepository {
         const startAt = (parameters.page-1) * parameters.pageSize;
         const endAt = startAt + parameters.pageSize;
 
-        const query = parameters.area !== undefined ?
+        const query = parameters.keyword == undefined ?
             this.db
                 .collection(ParkingLotRepositoryImpl.parkingLots)
-                .where('location.latitude', '>=', parameters.area.southwest.latitude)
-                .where('location.latitude', '<=', parameters.area.northeast.latitude)
-                .where('location.longitude', '>=', parameters.area.southwest.longitude)
-                .where('location.longitude', '<=', parameters.area.northeast.longitude) :
+                .where('location.latitude', '>=', parameters.area!.southwest.latitude)
+                .where('location.latitude', '<=', parameters.area!.northeast.latitude)
+                .where('location.longitude', '>=', parameters.area!.southwest.longitude)
+                .where('location.longitude', '<=', parameters.area!.northeast.longitude) :
             this.db
                 .collection(ParkingLotRepositoryImpl.parkingLots)
                 .where(
                     'keyword',
                     'array-contains',
-                    parameters.keyword?.toLowerCase()!
+                    parameters.keyword?.toLowerCase()
                 );
 
         const snapshots = (await query.get()).docs;
+
+        console.log(snapshots.length);
 
         const results: Array<LightParkingLot> = [];
 

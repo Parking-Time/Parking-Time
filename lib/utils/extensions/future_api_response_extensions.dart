@@ -1,5 +1,6 @@
 import 'package:either_dart/either.dart';
 import 'package:parking_time/data/models/api_response_model.dart';
+import 'package:parking_time/main.dart';
 import 'package:parking_time/utils/typedef/exception_trace.dart';
 
 import '../typedef/page.dart';
@@ -36,6 +37,7 @@ extension FutureApiResponseExtensions<T> on Future<ApiResponseModel<T>> {
       if (e is Exception) {
         return Left((exception: e, trace: trace));
       } else {
+        logger.e("Error", error: e, stackTrace: trace);
         return Left((exception: Exception('unknown error'), trace: trace));
       }
     }

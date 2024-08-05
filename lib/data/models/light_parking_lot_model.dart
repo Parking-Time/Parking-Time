@@ -7,7 +7,7 @@ part 'light_parking_lot_model.g.dart';
 
 @JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class LightParkingLotModel {
-  final String id;
+  final int id;
 
   final int acceptableQuantity;
 
@@ -19,7 +19,7 @@ class LightParkingLotModel {
 
   final AddressModel address;
 
-  @JsonKey(fromJson: _fromJsonLocation)
+  @JsonKey(fromJson: _fromJsonLocation, toJson: _toJsonLocation)
   final LatLng location;
 
   final int viewCount;
@@ -48,5 +48,7 @@ class LightParkingLotModel {
 
   Map<String, dynamic> toJson() => _$LightParkingLotModelToJson(this);
 
-  static LatLng _fromJsonLocation(Object? json) => LatLng.fromJson(json)!;
+  static LatLng _fromJsonLocation(Map<String, dynamic> json) => LatLng(json['latitude'], json['longitude']);
+
+  static Map<String, dynamic> _toJsonLocation(LatLng location) => {'latitude': location.latitude, 'longitude': location.longitude};
 }

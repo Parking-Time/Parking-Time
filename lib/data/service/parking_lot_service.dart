@@ -8,11 +8,11 @@ import '../models/api_response_model.dart';
 
 part 'parking_lot_service.g.dart';
 
-@RestApi(baseUrl: '/parking_lots')
+@RestApi(baseUrl: '/parking_time/api')
 abstract class ParkingLotService {
   factory ParkingLotService(Dio dio, {String baseUrl}) = _ParkingLotService;
 
-  @GET('')
+  @GET('/parking_lots')
   Future<ApiResponseModel<List<LightParkingLotModel>>> getParkingLots({
     @Query('sorting') required String sorting,
     @Query('page') required int page,

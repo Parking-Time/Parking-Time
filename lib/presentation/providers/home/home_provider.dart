@@ -1,4 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 import '../../../domain/entities/parking_lot/light_parking_lot_entity.dart';
@@ -34,8 +35,8 @@ class HomeStateNotifier extends StateNotifier<HomeState> {
   void loadNearbyParkingLot() async {
     if (!(await _permissionUseCase.requestPermission(Permission.locationWhenInUse)).isGranted) return;
 
-    //const center = LatLng(37.5250243, 126.9258867);
-    final center = await _locationUseCase.getFastUserCurrentLocation();
+    const center = LatLng(37.5250243, 126.9258867);
+    //final center = await _locationUseCase.getFastUserCurrentLocation();
 
     final result = await _parkingLotUseCase.getParkingLots(sorting: Distance(), center: center, radius: 10000);
 
