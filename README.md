@@ -1,5 +1,5 @@
 # 주차시간 (Parking Time)
-![parking_time](https://github.com/user-attachments/assets/2b3ed596-4349-442b-9c37-8b7b35cb97fc)
+![parking_time](https://github.com/user-attachments/assets/ba4af88b-67f4-4921-9938-d4aa8803d806)
 
 원하는 목적지와 가까운 주차장 또는 제휴를 맺고 있는 주차장의 정보를 찾아주는 앱입니다.
 
