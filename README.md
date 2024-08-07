@@ -26,7 +26,8 @@
 - **Data**는 외부 데이터 소스와 상호작용하는 기능을 담당한다. model, service, repository impl로 구성된다.
 - **Domain**은 Business logic, Business rules을 포함하며, entity에 함수와 데이터의 집합을 캡슐화하는 기능을 담당한다.  
 use case, interface repository, entity로 구성된다.
-- **Presentation**은 사용자와 정보를 제공하며, 상호작용하는 기능을 담당한다. ui, component, provider, resource, router로 구성된다.  
+- **Presentation**은 사용자와 정보를 제공하며, 상호작용하는 기능을 담당한다.
+ui, component, provider, resource, router로 구성된다.  
 (Presentation은 MVVM 패턴을 준수하며, screen과 provider가 1:1 관계로 구성된다.)
 
 #### Class
