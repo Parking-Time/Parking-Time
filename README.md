@@ -41,6 +41,157 @@ ui, component, provider, resource, router로 구성된다.
   - 각 Layer에서 일어나는 에러는 절대 Layer간 바운더리를 넘지 않으며,
 Layer 내부에서 처리하여 CommonExceiption으로 전달한다.
 
+## Project Structure
+```
+├── analysis_options.yaml
+├── android
+│   ├── app
+│   │   ├── build.gradle
+│   │   ├── google-services.json
+│   │   └── src
+│   │       ├── debug
+│   │       │   └── AndroidManifest.xml
+│   │       ├── main
+│   │       │   ├── AndroidManifest.xml
+│   │       │   ├── java
+│   │       │   │   └── io
+│   │       │   │       └── flutter
+│   │       │   │           └── plugins
+│   │       │   │               └── GeneratedPluginRegistrant.java
+│   │       │   ├── kotlin
+│   │       │   │   └── com
+│   │       │   │       └── parkingtime
+│   │       │   │           └── parking_time
+│   │       │   │               └── MainActivity.kt
+│   │       │   └── res
+│   │       │       └── ...
+│   │       └── profile
+│   │           └── AndroidManifest.xml
+│   ├── build.gradle
+│   ├── gradle
+│   │   └── wrapper
+│   │       └── ...
+│   └── settings.gradle
+├── assets
+│   ├── icons
+│   │   └── ...
+│   └── images
+│       └── ...
+├── ios
+│   ├── Flutter
+│   │   └── ...
+│   ├── Podfile
+│   ├── Pods
+│   │   └── ...
+│   ├── Runner
+│   │   ├── AppDelegate.swift
+│   │   ├── Assets.xcassets
+│   │   │   └── LaunchImage.imageset
+│   │   │       └── ...
+│   │   ├── Base.lproj
+│   │   │   ├── LaunchScreen.storyboard
+│   │   │   └── Main.storyboard
+│   │   └── ...
+│   ├── Runner.xcodeproj
+│   │   ├── project.pbxproj
+│   │   ├── project.xcworkspace
+│   │   │   └── ...
+│   │   └── xcshareddata
+│   │       └── ...
+│   ├── Runner.xcworkspace
+│   │   ├── contents.xcworkspacedata
+│   │   └── xcshareddata
+│   │       └── ...
+│   ├── RunnerTests
+│   │   └── RunnerTests.swift
+│   └── firebase_app_id_file.json
+├── lib
+│   ├── app.dart
+│   ├── data
+│   │   ├── models
+│   │   │   └── ...
+│   │   ├── repository_impls
+│   │   │   └── ...
+│   │   └── service
+│   │       ├── dio
+│   │       │   └── dio_config.dart
+│   │       └── ...
+│   ├── domain
+│   │   ├── entities
+│   │   │   └── ...
+│   │   ├── repositories
+│   │   │   └── ...
+│   │   └── use_cases
+│   │       └── ...
+│   ├── firebase_options.dart
+│   ├── main.dart
+│   ├── presentation
+│   │   ├── components
+│   │   │   ├── card
+│   │   │   │   └── ...
+│   │   │   ├── chip
+│   │   │   │   └── ...
+│   │   │   ├── common
+│   │   │   │   └── ...
+│   │   │   └── text_field
+│   │   │       └── ...
+│   │   ├── providers
+│   │   │   ├── admin
+│   │   │   │   └── ...
+│   │   │   └── home
+│   │   │       └── ...
+│   │   ├── resources
+│   │   │   ├── ...
+│   │   │   └── styles
+│   │   │       └── ...
+│   │   ├── router
+│   │   │   ├── ...
+│   │   │   ├── route_animations
+│   │   │   │   └── ...
+│   │   │   └── routes
+│   │   │       ├── ...
+│   │   │       ├── screen_routes
+│   │   │       │   └── ...
+│   │   │       └── tab_routes
+│   │   │           └── ...
+│   │   └── ui
+│   │       └── ...
+│   └── utils
+│       ├── env
+│       │   └── ...
+│       ├── extensions
+│       │   └── ...
+│       ├── sortings
+│       │   └── ...
+│       ├── typedef
+│       │   └── ...
+│       └── wrapper.dart
+├── pubspec.lock
+├── pubspec.yaml
+├── test
+└── web
+    ├── ...
+    ├── icons
+    │   └── ...
+    ├── index.html
+    └── manifest.json
+```
+
+## Reference
+- [Effective Dart](https://dart.dev/effective-dart)
+- [Clean Architecture](https://medium.com/@yamen.abd98/clean-architecture-in-flutter-mvvm-bloc-dio-79b1615530e1)
+
+## External API
+- Firebase Cloud Functions
+
+## Library & Framework
+- flutter_riverpod
+- go_router
+- retrofit
+- envied
+- firebase_core
+- cloud_firestore
+
 ## Design
-**Figma link:** https://www.figma.com/design/aVBhhk26zKm7GL0tu0IZC2/Application%2FWeb-design?m=auto&t=wtjwha5pDRuBkrCT-1
+[Figma link](https://www.figma.com/design/aVBhhk26zKm7GL0tu0IZC2/Application%2FWeb-design?m=auto&t=wtjwha5pDRuBkrCT-1)
 ![parking-time-design](https://github.com/user-attachments/assets/e1917bc2-ed21-49f0-86a8-efd7c9362a42)
