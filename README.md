@@ -185,12 +185,14 @@ Layer 내부에서 처리하여 CommonExceiption으로 전달한다.
 - Firebase Cloud Functions
 
 ## Library & Framework
-- flutter_riverpod
-- go_router
-- retrofit
-- envied
-- firebase_core
-- cloud_firestore
+- Flutter 3.22.2
+- Dart 3.4.3
+- Flutter Riverpod 2.5.1
+- GoRouter 13.2.1
+- Retrofit 4.1.0
+- Envied 0.5.4+1
+- Firebase Core 2.32.0
+- Cloud Firestore 4.4.4
 
 ## Design
 [Figma link](https://www.figma.com/design/aVBhhk26zKm7GL0tu0IZC2/Application%2FWeb-design?m=auto&t=wtjwha5pDRuBkrCT-1)
