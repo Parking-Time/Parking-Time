@@ -4,8 +4,8 @@
 원하는 목적지와 가까운 주차장 또는 제휴를 맺고 있는 주차장의 정보를 찾아주는 앱입니다.
 
 ## Design
-![Figma Link](https://www.figma.com/design/aVBhhk26zKm7GL0tu0IZC2/Application%2FWeb-design?m=auto&t=wtjwha5pDRuBkrCT-1)
-![parking-time-design](https://github.com/user-attachments/assets/731b3278-833d-4f09-80e1-82946d02afb5)
+**Figma link:** https://www.figma.com/design/aVBhhk26zKm7GL0tu0IZC2/Application%2FWeb-design?m=auto&t=wtjwha5pDRuBkrCT-1
+![parking-time-design](https://github.com/user-attachments/assets/e1917bc2-ed21-49f0-86a8-efd7c9362a42)
 
 ## Feature
 - 주차장
