@@ -3,6 +3,10 @@
 
 원하는 목적지와 가까운 주차장 또는 제휴를 맺고 있는 주차장의 정보를 찾아주는 앱입니다.
 
+## Design
+![Figma Link](https://www.figma.com/design/aVBhhk26zKm7GL0tu0IZC2/Application%2FWeb-design?m=auto&t=wtjwha5pDRuBkrCT-1)
+![parking-time-design](https://github.com/user-attachments/assets/731b3278-833d-4f09-80e1-82946d02afb5)
+
 ## Feature
 - 주차장
   - 주차장 목록 조회
@@ -37,6 +41,3 @@
 #### Error Handling
 - Dart 및 라이브러리에서 발생하는 에러를 제외한 모든 비즈니스 에러는 CommonExceiption으로 관리한다.
 - 각 Layer에서 일어나는 에러는 절대 Layer간 바운더리를 넘지 않으며, Layer 내부에서 처리하여 CommonExceiption으로 전달한다.
-
-## Design
-Figma Link: https://www.figma.com/design/aVBhhk26zKm7GL0tu0IZC2/Application%2FWeb-design?m=auto&t=wtjwha5pDRuBkrCT-1
