@@ -6,6 +6,6 @@ part 'env.g.dart';
 abstract class Env {
 
   @EnviedField(varName: 'BASE_URL')
-  static const baseUrl = _Env.baseUrl;
+  static const baseUrl = '_Env.baseUrl';
 
 }

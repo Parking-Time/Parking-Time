@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:parking_time/presentation/resources/styles/shape.dart';
 
-import '../../../presentation/resources/app_colors.dart';
+import '../../resources/styles/colors.dart';
 import '../../../presentation/resources/assets.gen.dart';
 import 'home_content.dart';
 import 'app_bar_sliver_delegate.dart';
@@ -34,10 +35,10 @@ class HomeScreen extends StatelessWidget {
                       child: Container(
                         height: 48,
                         padding: const EdgeInsets.symmetric(horizontal: 24),
-                        decoration: const BoxDecoration(color: kWhite, borderRadius: BorderRadius.all(Radius.circular(40))),
+                        decoration: const BoxDecoration(color: kWhite, borderRadius: kAllRoundMax),
                         child: Row(
                           children: [
-                            Assets.icons.bxSearch.svg(colorFilter: const ColorFilter.mode(kGray2, BlendMode.srcIn), height: 24, width: 24),
+                            Assets.icons.bxsSearch.svg(colorFilter: const ColorFilter.mode(kGray2, BlendMode.srcIn), height: 24, width: 24),
                             const SizedBox(width: 8),
                             Text(
                               '가고 싶은 곳을 검색해보세요',
@@ -53,7 +54,7 @@ class HomeScreen extends StatelessWidget {
             ),
             SliverToBoxAdapter(
               child: Container(
-                decoration: const BoxDecoration(color: kWhite, borderRadius: BorderRadius.vertical(top: Radius.circular(14))),
+                decoration: const BoxDecoration(color: kWhite, borderRadius: kTopRound13),
                 child: const HomeContent(),
               ),
             )

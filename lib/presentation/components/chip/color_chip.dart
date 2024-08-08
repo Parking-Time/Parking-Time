@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:parking_time/presentation/resources/styles/shape.dart';
 
-import '../../../presentation/resources/app_colors.dart';
+import '../../resources/styles/colors.dart';
 
 class ColorChip extends StatelessWidget {
   const ColorChip({
@@ -30,7 +31,7 @@ class ColorChip extends StatelessWidget {
         height: 21,
         decoration: BoxDecoration(
           color: backgroundColor,
-          borderRadius: const BorderRadius.all(Radius.circular(10.5)),
+          borderRadius: kAllRound13,
         ),
         alignment: Alignment.center,
         padding: const EdgeInsets.symmetric(horizontal: 10),

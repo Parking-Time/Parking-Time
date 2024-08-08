@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../presentation/resources/app_colors.dart';
+import '../../resources/styles/colors.dart';
 import '../../../presentation/resources/assets.gen.dart';
 import '../../../presentation/router/app_router.dart';
 

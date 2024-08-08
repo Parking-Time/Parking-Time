@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:parking_time/presentation/resources/app_theme.dart';
+import 'package:parking_time/presentation/resources/styles/theme.dart';
 import 'package:parking_time/presentation/router/app_router.dart';
 
 class App extends StatelessWidget {

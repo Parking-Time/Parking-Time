@@ -4,7 +4,7 @@ import 'package:parking_time/data/models/address_model.dart';
 import 'package:parking_time/data/models/amount_day_weeks_model.dart';
 
 import '../../../data/models/location_model.dart';
-import '../../../presentation/resources/app_colors.dart';
+import '../../../presentation/resources/styles/colors.dart';
 
 enum ParkingLotType {
   mechanical(title: '기계식', titleColor: kBlue2, backgroundColor: kBlue9),
@@ -20,7 +20,7 @@ enum ParkingLotType {
   final Color backgroundColor;
 }
 
-abstract class BaseParkingLotEntity {
+abstract class BaseParkingLotEntity<T> {
 
   final String name;
 
@@ -36,7 +36,7 @@ abstract class BaseParkingLotEntity {
 
   final AmountDayWeeksModel? amountDayWeeks;
 
-  final List<String> images;
+  final List<T> images;
 
   final List<ParkingLotType> types;
 
