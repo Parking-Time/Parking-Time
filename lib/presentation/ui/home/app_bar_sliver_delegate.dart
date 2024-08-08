@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 
-import '../../../presentation/resources/app_colors.dart';
+import '../../resources/styles/colors.dart';
 import '../../../presentation/resources/assets.gen.dart';
 import '../../../presentation/router/app_router.dart';
 import '../../../presentation/router/routes/screen_routes/admin_route.dart';

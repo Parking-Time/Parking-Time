@@ -6,7 +6,7 @@ import 'package:parking_time/data/repository_impls/parking_lot_firebase_reposito
 import 'package:parking_time/data/repository_impls/parking_lot_repository_impl.dart';
 import 'package:parking_time/data/service/dio/dio_config.dart';
 import 'package:parking_time/data/service/parking_lot_service.dart';
-import 'package:parking_time/domain/entities/parking_lot/light_parking_lot_entity.dart';
+import 'package:parking_time/domain/entities/light_parking_lot/light_parking_lot_entity.dart';
 
 import '../../domain/repositories/parking_lot_repository.dart';
 import '../../utils/sortings/sorting.dart';
@@ -19,9 +19,9 @@ final parkingLotUseCase = Provider((ref) => ParkingLotUseCase(repository: Parkin
 
 class ParkingLotUseCase {
 
-  final ParkingLotRepository repository;
+  final ParkingLotRepository _repository;
 
-  ParkingLotUseCase({required this.repository});
+  ParkingLotUseCase({required ParkingLotRepository repository}) : _repository = repository;
 
   Future<Either<ExceptionTrace, Page<LightParkingLotEntity>>> getParkingLots({
     required Sorting sorting,
@@ -31,7 +31,7 @@ class ParkingLotUseCase {
     double? radius,
     String? keyword,
   }) async {
-    final result = await repository.getParkingLots(page: page, pageSize: pageSize, sorting: sorting, center: center, radius: radius, keyword: keyword);
+    final result = await _repository.getParkingLots(page: page, pageSize: pageSize, sorting: sorting, center: center, radius: radius, keyword: keyword);
     if (result.isLeft) return Left(result.left);
 
     final parkingLotEntityList = List.generate(result.right.data.length, (index) => LightParkingLotEntity.fromModel(result.right.data[index]));

@@ -1,4 +1,3 @@
-import 'package:json_annotation/json_annotation.dart';
 import 'package:parking_time/domain/entities/parking_lot/base_parking_lot_entity.dart';
 
 class ParkingLotEntity extends BaseParkingLotEntity {

@@ -2,7 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-import '../../../domain/entities/parking_lot/light_parking_lot_entity.dart';
+import '../../../domain/entities/light_parking_lot/light_parking_lot_entity.dart';
 import '../../../domain/use_cases/location_use_case.dart';
 import '../../../domain/use_cases/parking_lot_use_case.dart';
 import '../../../domain/use_cases/permission_use_case.dart';

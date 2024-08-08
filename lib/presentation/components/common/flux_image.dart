@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
 
-import '../../../presentation/resources/app_colors.dart';
+import '../../resources/styles/colors.dart';
 import '../../../presentation/resources/assets.gen.dart';
 
 class FluxImage extends StatelessWidget {
@@ -16,11 +16,21 @@ class FluxImage extends StatelessWidget {
   final Color? color;
   final String? package;
   final bool? repeat;
-  final bool? fromFile;
+  final bool fromFile;
   final BlendMode? blendMode;
 
-  const FluxImage(
-      {required this.imageUrl, super.key, this.width, this.height, this.fit, this.color, this.package, this.repeat, this.fromFile, this.blendMode});
+  const FluxImage({
+    required this.imageUrl,
+    super.key,
+    this.width,
+    this.height,
+    this.fit,
+    this.color,
+    this.package,
+    this.repeat,
+    this.fromFile = false,
+    this.blendMode,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +38,7 @@ class FluxImage extends StatelessWidget {
     var isSvgImage = imageUrl.split('.').last == 'svg';
     var isLottieImage = imageUrl.split('.').last == 'json';
 
-    if (fromFile != null && fromFile!) {
+    if (fromFile) {
       return Image.file(
         File(imageUrl),
         fit: BoxFit.cover,

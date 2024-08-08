@@ -15,14 +15,14 @@ import 'package:vector_graphics/vector_graphics.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
-  /// File path: assets/icons/bx-search.svg
-  SvgGenImage get bxSearch => const SvgGenImage('assets/icons/bx-search.svg');
-
   /// File path: assets/icons/bxs-back.svg
   SvgGenImage get bxsBack => const SvgGenImage('assets/icons/bxs-back.svg');
 
   /// File path: assets/icons/bxs-bell.svg
   SvgGenImage get bxsBell => const SvgGenImage('assets/icons/bxs-bell.svg');
+
+  /// File path: assets/icons/bxs-checked.svg
+  SvgGenImage get bxsChecked => const SvgGenImage('assets/icons/bxs-checked.svg');
 
   /// File path: assets/icons/bxs-close-circle.svg
   SvgGenImage get bxsCloseCircle => const SvgGenImage('assets/icons/bxs-close-circle.svg');
@@ -45,20 +45,26 @@ class $AssetsIconsGen {
   /// File path: assets/icons/bxs-right-arrow-circle.svg
   SvgGenImage get bxsRightArrowCircle => const SvgGenImage('assets/icons/bxs-right-arrow-circle.svg');
 
+  /// File path: assets/icons/bxs-search.svg
+  SvgGenImage get bxsSearch => const SvgGenImage('assets/icons/bxs-search.svg');
+
   /// File path: assets/icons/bxs-store-alt.svg
   SvgGenImage get bxsStoreAlt => const SvgGenImage('assets/icons/bxs-store-alt.svg');
 
   /// File path: assets/icons/bxs-time-five.svg
   SvgGenImage get bxsTimeFive => const SvgGenImage('assets/icons/bxs-time-five.svg');
 
+  /// File path: assets/icons/bxs-unchecked.svg
+  SvgGenImage get bxsUnchecked => const SvgGenImage('assets/icons/bxs-unchecked.svg');
+
   /// File path: assets/icons/bxs-user.svg
   SvgGenImage get bxsUser => const SvgGenImage('assets/icons/bxs-user.svg');
 
   /// List of all assets
   List<SvgGenImage> get values => [
-        bxSearch,
         bxsBack,
         bxsBell,
+        bxsChecked,
         bxsCloseCircle,
         bxsDollarCircle,
         bxsHeart,
@@ -66,8 +72,10 @@ class $AssetsIconsGen {
         bxsMap,
         bxsRegistered,
         bxsRightArrowCircle,
+        bxsSearch,
         bxsStoreAlt,
         bxsTimeFive,
+        bxsUnchecked,
         bxsUser
       ];
 }

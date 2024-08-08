@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:parking_time/presentation/components/card/parking_lot_card.dart';
+import 'package:parking_time/presentation/resources/styles/shape.dart';
 
-import '../../../presentation/resources/app_colors.dart';
+import '../../resources/styles/colors.dart';
 import '../../providers/home/home_provider.dart';
 
 class HomeContent extends ConsumerWidget {
@@ -23,7 +24,7 @@ class HomeContent extends ConsumerWidget {
             height: 126,
             decoration: const BoxDecoration(
               color: kGray3,
-              borderRadius: BorderRadius.all(Radius.circular(7))
+              borderRadius: kAllRound7
             ),
           ),
           const SizedBox(height: 35),
