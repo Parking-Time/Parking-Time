@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:parking_time/presentation/components/common/flux_image.dart';
-import 'package:parking_time/presentation/providers/admin/admin_provider.dart';
 import 'package:parking_time/presentation/resources/styles/colors.dart';
-import 'package:parking_time/presentation/resources/styles/shape.dart';
 import 'package:parking_time/presentation/ui/admin/image_content.dart';
 import 'package:parking_time/presentation/ui/admin/info_content.dart';
 
@@ -16,6 +12,7 @@ class AdminScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kWhite,
       appBar: AppBar(
         leading: IconButton(
           onPressed: AppRouter.pop,
@@ -23,12 +20,16 @@ class AdminScreen extends StatelessWidget {
         ),
       ),
       body: const SingleChildScrollView(
-        child: Column(
-          children: [
-            ImageContent(),
-            SizedBox(height: 20),
-            InfoContent(),
-          ],
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ImageContent(),
+              SizedBox(height: 20),
+              InfoContent(),
+            ],
+          ),
         ),
       ),
     );

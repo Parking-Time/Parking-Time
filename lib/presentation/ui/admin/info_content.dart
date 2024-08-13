@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:parking_time/presentation/components/text_field/filled_text_field.dart';
 import 'package:parking_time/presentation/providers/admin/admin_provider.dart';
 
 import '../../resources/styles/shape.dart';
@@ -14,23 +15,13 @@ class InfoContent extends ConsumerWidget {
 
     return Column(
       children: [
-        TextField(
-          style: Theme.of(context).textTheme.bodyMedium,
-          decoration: const InputDecoration(
-            hintText: '주차장 이름',
-            border: OutlineInputBorder(borderRadius: kAllRound9),
-            enabledBorder: OutlineInputBorder(borderRadius: kAllRound9),
-          ),
+        FilledTextField(
+          hintText: '주차장 이름',
           onChanged: notifier.setParkingLotName,
         ),
         const SizedBox(height: 20),
-        TextField(
-          style: Theme.of(context).textTheme.bodyMedium,
-          decoration: const InputDecoration(
-            hintText: '주차장 이름',
-            border: OutlineInputBorder(borderRadius: kAllRound9),
-            enabledBorder: OutlineInputBorder(borderRadius: kAllRound9),
-          ),
+        FilledTextField(
+          hintText: '주소',
           onChanged: notifier.setParkingLotName,
         ),
       ],

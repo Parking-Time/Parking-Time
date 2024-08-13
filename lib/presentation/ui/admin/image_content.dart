@@ -15,6 +15,7 @@ class ImageContent extends ConsumerWidget {
     final currentIndex = ref.watch(adminProvider).currentImageIndex;
 
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
           height: 200,
