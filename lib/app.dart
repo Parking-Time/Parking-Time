@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'utils/package_utils.dart';
+import 'package:parking_time/presentation/resources/styles/theme.dart';
+import 'package:parking_time/presentation/router/app_router.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -12,7 +12,7 @@ class App extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.light,
-      routerConfig: AppRouter.baseRouter(),
+      routerConfig: AppRouter.router,
     );
   }
 }

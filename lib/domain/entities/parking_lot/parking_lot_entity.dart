@@ -1,22 +1,26 @@
-import 'package:json_annotation/json_annotation.dart';
 import 'package:parking_time/domain/entities/parking_lot/base_parking_lot_entity.dart';
 
-part 'parking_lot_entity.g.dart';
-
-@JsonSerializable(explicitToJson: true, fieldRename: FieldRename.snake)
 class ParkingLotEntity extends BaseParkingLotEntity {
 
-  final int id;
+  final String id;
+
+  final int viewCount;
+
+  final List<String> reservedPlaces;
 
   const ParkingLotEntity({
     required this.id,
     required super.name,
+    super.openTime,
+    super.closeTime,
     required super.address,
-    required super.parkingTime,
-    required super.images,
+    required super.location,
+    required super.acceptableQuantity,
+    super.amountDayWeeks,
+    super.images = const [''],
+    required this.viewCount,
+    this.reservedPlaces = const [],
+    super.types = const [],
   });
 
-  factory ParkingLotEntity.fromJson(Map<String, dynamic> json) => _$ParkingLotEntityFromJson(json);
-
-  Map<String, dynamic> toJson() => _$ParkingLotEntityToJson(this);
 }
