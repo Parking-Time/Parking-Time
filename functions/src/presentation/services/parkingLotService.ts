@@ -6,6 +6,12 @@ import {Sorting} from "../../utils/sortings/sorting";
 import {Meta, ResponseBody} from "../../data/models/response_body";
 import {LatLng} from "../../data/models/latLng";
 import {apiRouter} from "../../index";
+import {Address} from "../../data/models/address";
+import busboy from "busboy";
+
+interface IFileInfo extends busboy.FileInfo {
+    buffer: Buffer | null;
+}
 
 export class ParkingLotService {
     locationUseCase: LocationUseCase;
@@ -79,23 +85,58 @@ export class ParkingLotService {
                 );
             }
         } catch (error) {
-            if (error instanceof Error) {
-                console.error(error.name, error.message, error.stack);
-                console.log(`<br>`);
-                console.log(`<br>`);
-                response.status(400).json(new ResponseBody({
-                    status: 400,
-                    errorMessage: error.message,
-                }));
-            } else {
-                console.error('An unknown error occurred.');
-                console.log(`<br>`);
-                console.log(`<br>`);
-                response.status(400).json(new ResponseBody({
-                    status: 400,
-                    errorMessage: 'An unknown error occurred.',
-                }));
-            }
+            this.catchError(error, response)
+        }
+    }
+
+    async createParkingLot(request: express.Request, response: express.Response): Promise<void> {
+        try {
+            const busyBoy = busboy({headers: request.headers});
+            const files: Map<string, IFileInfo> = new Map();
+
+            busyBoy.on("file", async (fieldName, stream, file) => {
+                stream.on("data", async (chunk) => {
+                    files.set(file.filename, {filename: file.filename, encoding: file.encoding, mimeType: file.mimeType, buffer: chunk.buffer});
+                });
+            });
+
+            busyBoy.on("field", (fieldName, value, info) => {
+                request.body[fieldName] = value;
+            });
+
+            busyBoy.end(request.body);
+
+            const acceptableQuantity = request.body['acceptable_quantity'] as number;
+            const openTime = request.body['open_time'] as number | null;
+            const closeTime = request.body['close_time'] as number | null;
+            const name = request.body['name'] as string;
+            const address = Address.fromJson(request.body['address']);
+            const location = LatLng.fromJson(request.body['location']);
+            const amountDayWeeks = LatLng.fromJson(request.body['amount_day_weeks']);
+            const images = [...files.values()];
+            const types = (request.body['types'] as string).split(",");
+        } catch (error) {
+           this.catchError(error, response)
+        }
+    }
+
+    catchError(error: unknown, response: express.Response): void {
+        if (error instanceof Error) {
+            console.error(error.name, error.message, error.stack);
+            console.log(`<br>`);
+            console.log(`<br>`);
+            response.status(400).json(new ResponseBody({
+                status: 400,
+                errorMessage: error.message,
+            }));
+        } else {
+            console.error('An unknown error occurred.');
+            console.log(`<br>`);
+            console.log(`<br>`);
+            response.status(400).json(new ResponseBody({
+                status: 400,
+                errorMessage: 'An unknown error occurred.',
+            }));
         }
     }
 }
