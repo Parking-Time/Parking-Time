@@ -3,6 +3,19 @@
 
 원하는 목적지와 가까운 주차장 또는 제휴를 맺고 있는 주차장의 정보를 찾아주는 앱입니다.
 
+## Must-see code
+- Data Layer
+  - [service](https://github.com/Parking-Time/Parking-Time/blob/main/lib/data/service/parking_lot_service.dart)
+  - [repository impl](https://github.com/Parking-Time/Parking-Time/blob/main/lib/data/repository_impls/parking_lot_repository_impl.dart)
+- Domain Layer
+  - [entity](https://github.com/Parking-Time/Parking-Time/blob/main/lib/domain/entities/parking_lot/base_parking_lot_entity.dart)
+  - [repository](https://github.com/Parking-Time/Parking-Time/blob/main/lib/domain/repositories/parking_lot_repository.dart)
+  - [use case](https://github.com/Parking-Time/Parking-Time/blob/main/lib/domain/use_cases/parking_lot_use_case.dart)
+- Presentation Layer
+  - [provider](https://github.com/Parking-Time/Parking-Time/blob/main/lib/presentation/providers/home/home_provider.dart)
+  - [screen](https://github.com/Parking-Time/Parking-Time/blob/main/lib/presentation/ui/home/home_screen.dart)
+  - [routing](https://github.com/Parking-Time/Parking-Time/blob/main/lib/presentation/router/app_router.dart)
+
 ## Feature
 - 주차장
   - 주차장 목록 조회
@@ -20,7 +33,10 @@
 
 ## Coding Convention (Frontend)
 - Common
-  - Clean Architecture + MVVM 기반으로 작성한다.
+  - Clean Architecture + MVP 기반으로 작성한다.
+  - 가능한 SOLID 원칙을 준수한다.
+  - 프로젝트의 규모에 맞게 바운더리 간 정보 교환은 Entity, Model을 허용한다.
+![Group 456](https://github.com/user-attachments/assets/707b9242-057c-42bf-9dfd-bee0f8fee35f)
 
 - Layer
   - **Data**는 외부 데이터 소스와 상호작용하는 기능을 담당한다. model, service, repository impl로 구성된다.
