@@ -5,17 +5,17 @@
 
 ## Must-see code
 - Data Layer
-  - [service](https://github.com/Parking-Time/Parking-Time/blob/main/lib/data/service/parking_lot_service.dart)
-  - [repository impl](https://github.com/Parking-Time/Parking-Time/blob/main/lib/data/repository_impls/parking_lot_repository_impl.dart)
+  - [service - main/lib/data/service/parking_lot_service.dart](https://github.com/Parking-Time/Parking-Time/blob/main/lib/data/service/parking_lot_service.dart)
+  - [repository impl - main/lib/data/repository_impls/parking_lot_repository_impl.dart](https://github.com/Parking-Time/Parking-Time/blob/main/lib/data/repository_impls/parking_lot_repository_impl.dart)
 - Domain Layer
-  - [entity](https://github.com/Parking-Time/Parking-Time/blob/main/lib/domain/entities/parking_lot/base_parking_lot_entity.dart)
-  - [repository](https://github.com/Parking-Time/Parking-Time/blob/main/lib/domain/repositories/parking_lot_repository.dart)
-  - [use case](https://github.com/Parking-Time/Parking-Time/blob/main/lib/domain/use_cases/parking_lot_use_case.dart)
+  - [entity - main/lib/domain/entities/parking_lot/base_parking_lot_entity.dart](https://github.com/Parking-Time/Parking-Time/blob/main/lib/domain/entities/parking_lot/base_parking_lot_entity.dart)
+  - [repository - main/lib/domain/repositories/parking_lot_repository.dart](https://github.com/Parking-Time/Parking-Time/blob/main/lib/domain/repositories/parking_lot_repository.dart)
+  - [use case - main/lib/domain/use_cases/parking_lot_use_case.dart](https://github.com/Parking-Time/Parking-Time/blob/main/lib/domain/use_cases/parking_lot_use_case.dart)
 - Presentation Layer
-  - [provider](https://github.com/Parking-Time/Parking-Time/blob/main/lib/presentation/providers/home/home_provider.dart)
-  - [screen](https://github.com/Parking-Time/Parking-Time/blob/main/lib/presentation/ui/home/home_screen.dart)
-  - [routing](https://github.com/Parking-Time/Parking-Time/blob/main/lib/presentation/router/app_router.dart)
-  - [routing delegate](https://github.com/Parking-Time/Parking-Time/blob/main/lib/presentation/router/app_router_delegate.dart)
+  - [provider - main/lib/presentation/providers/home/home_provider.dart](https://github.com/Parking-Time/Parking-Time/blob/main/lib/presentation/providers/home/home_provider.dart)
+  - [screen - main/lib/presentation/ui/home/home_screen.dart](https://github.com/Parking-Time/Parking-Time/blob/main/lib/presentation/ui/home/home_screen.dart)
+  - [routing - main/lib/presentation/router/app_router.dart](https://github.com/Parking-Time/Parking-Time/blob/main/lib/presentation/router/app_router.dart)
+  - [routing delegate - main/lib/presentation/router/app_router_delegate.dart](https://github.com/Parking-Time/Parking-Time/blob/main/lib/presentation/router/app_router_delegate.dart)
 
 ## Feature
 - 주차장
